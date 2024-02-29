@@ -1,0 +1,14 @@
+[Unit]
+Description=verifiedPetition
+After=network.target
+
+[Service]
+ExecStart=/opt/bin/verifiedPetition
+EnvironmentFile=/opt/bin/.env
+User=root
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target

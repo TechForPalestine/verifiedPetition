@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Say No To Genocide</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: row;
+        }
+
+        footer a {
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div style="max-width: 35rem; margin-right: auto; margin-left: auto;">
+    <h1>Professionals against genocide</h1>
+    <p>The chart below shows the number of signatures for each domain.</p>
+    <div id="chart-container">
+    </div>
+    <footer>
+        <p><a href="/">Petition</a></p>
+        <p><a href="https://github.com/ProfessionalsAgainstGenocide/verifiedPetition">GitHub</a></p>
+    </footer>
+</div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script async defer>
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+
+    function drawChart() {
+        const draw = async () => {
+            const statsResponse = await fetch("/stats")
+            const statsData = await statsResponse.json()
+            // Define the chart to be drawn.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Element');
+            data.addColumn('number', 'Signatures');
+            for(let row of Object.keys(statsData)){
+                data.addRow([row, statsData[row]])
+            }
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart-container'));
+            chart.draw(data, null);
+        }
+        draw();
+    }
+</script></body>
+</html>

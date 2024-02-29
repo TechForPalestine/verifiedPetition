@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Say No To Genocide</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            margin-bottom: 1rem;
+        }
+        footer {
+            display: flex;
+            flex-direction: row;
+        }
+        footer a {
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div style="max-width: 35rem; margin-right: auto; margin-left: auto;">
+    <h1>Professionals against genocide</h1>
+    <p>By signing this petition, you endorse the following message</p>
+    <p>As a member of the organization for which I work, I am signing this petition to express my opposition
+        to doing business with the state of Israel.
+        The state of Israel has been illegally and brutally occupying the Palestinian territories for over 50 years,
+        with complete disregard to international humanitarian law and human rights. It has been deemed an apartheid
+        state by <a href="https://www.amnesty.org/en/latest/campaigns/2022/02/israels-system-of-apartheid/">Amnesty
+            International</a>,
+        <a href="https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution">Human
+            Rights Watch</a>,
+        <a href="https://www.ohchr.org/en/press-releases/2022/03/israels-55-year-occupation-palestinian-territory-apartheid-un-human-rights">UN
+            experts</a>,
+        and Israel's own human rights organization <a href="https://www.btselem.org/topic/apartheid">B'Tselem</a>
+    </p>
+    <p>
+        Without committing to fight apartheid, our leaders show a clear double standard in their commitment to human
+        rights
+        and international law, and lose credibility in their commitment to social justice.
+    </p>
+    <p>If the Palestinian people cannot boycott, cannot prosecute, and continue to get ignored, we can never expect
+        security
+        for Palestinians and Israelis alike.</p>
+    <p>In the name of Gaza's children, and our children that will grow up and ask us what we did in the face of
+        genocide,
+        we request that the organizations we work for divest from the state of Israel until it changes course and gives
+        Palestinians their own state, equal rights to Palestinian-Israeli citizens, roll back settlement in the West
+        Bank,
+        and lift the siege from Gaza.</p>
+
+    <p><i>What happens when I enter my email here?</i></p>
+    <p>When you enter your email, you'll receive an email message with a unique link.
+        When the link is clicked, your signature is added to our database.</p>
+    <p>Only emails from the domains
+        <a href="https://github.com/ProfessionalsAgainstGenocide/verifiedPetition/blob/main/cmd/verifiedPetition/data/allowed_email_domains.txt">
+            in this list</a> will be accepted.
+    </p>
+    <p>If your organization's domain is not part of the list, please open an issue on <a href="https://github.com/ProfessionalsAgainstGenocide/verifiedPetition">GitHub</a>.</p>
+    <p><i>Is my identity protected?</i></p>
+    <p>We can only protect our own data and infrastructure. When you chose to receive this email to your corporate
+        email, you accept the risk of that email being found by your IT department.</p>
+    <p>When you choose to anonymize your email, we will hash/scramble your email in our database instead of
+        using the actual email. While this does provide some protection, in the case of a breach, hashed emails can be brute-forced.</p>
+    <p><i>What will my signature do?</i></p>
+    <p>The <a href="/stats.html">stats page</a> shows the number of signatures per-domain.
+    Once a significant number of signatories at an organization has been reached, we will contact representatives
+    of the organization and inform them of the stance of their staff. We will also simultaneously
+    contact non-anonymized signatories to let them know we've contacted their organization.</p>
+    <p>This is the extent of the action, and we hope it serves as a wake-up call to executive leadership
+    across industries.</p>
+    <form method="POST" action="/submit" id="petition-form">
+        <div style="display: flex; flex-direction: row;">
+            <label for="email" style="margin-right: 1rem;">Email</label>
+            <input id="email" type="email" name="email" placeholder="email@company.com" required>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <label for="anonymize" style="margin-right: 1rem;">Anonymize my email</label>
+            <input id="anonymize" type="checkbox" name="anonymize">
+        </div>
+        <div class="g-recaptcha" data-sitekey="6Lf5soIpAAAAALRIQaU5PPNi6BLVjcOFU97aiQZJ"></div>
+        <input type="submit"
+               value="Sign the petition"/>
+
+    </form>
+    <footer style="display: flex; flex-direction: row">
+        <p><a href="/stats.html">Stats</a></p>
+        <p><a href="https://github.com/ProfessionalsAgainstGenocide/verifiedPetition">GitHub</a></p>
+    </footer>
+</div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>

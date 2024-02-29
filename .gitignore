@@ -1,0 +1,7 @@
+*.db
+vendor
+.DS_Store
+.idea
+env.sh
+.env
+build/*
