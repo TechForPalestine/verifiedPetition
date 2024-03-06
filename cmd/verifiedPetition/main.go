@@ -215,6 +215,10 @@ func _submitHandler(w http.ResponseWriter, r *http.Request) {
 	anonymize := r.Form.Get("anonymize")
 	emailSplit := strings.Split(email, "@")
 	emailNameWithoutPlusAlias := strings.Split(emailSplit[0], "+")[0]
+	if len(emailNameWithoutPlusAlias) > 100 {
+		http.Redirect(w, r, "/suspicious_email.html", http.StatusFound)
+		return
+	}
 	if anonymize == "on" {
 		emailHash := sha256.Sum256([]byte(emailNameWithoutPlusAlias))
 		r.Form.Set(
