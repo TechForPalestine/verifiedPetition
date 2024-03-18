@@ -220,6 +220,7 @@ globalpaymentsinc.com
 gm.com
 goldmansachs.com
 goodyear.com
+google.com
 grainger.com
 graphicpkg.com
 graybar.com
@@ -428,6 +429,7 @@ statestreet.com
 steeldynamics.com
 stonex.com
 stryker.com
+sumup.com
 svb.com
 swn.com
 synchrony.com
@@ -505,4 +507,3 @@ wm.com
 xcelenergy.com
 xpo.com
 zoetis.com
-sumup.com
