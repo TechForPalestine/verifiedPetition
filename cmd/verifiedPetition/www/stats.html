@@ -28,42 +28,61 @@
         footer a {
             margin-right: 1rem;
         }
+
+        #chart-container {
+            width: 100%;
+            min-height: 500px;
+            min-width: 35rem;
+        }
+
+        #stats-content {
+            margin-right: 5rem;
+            margin-left: 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
     </style>
 </head>
 <body>
-<div style="max-width: 35rem; margin-right: auto; margin-left: auto;">
+<div id="stats-content">
     <h1>Professionals against genocide</h1>
     <p>The chart below shows the number of signatures for each domain.</p>
-    <div id="chart-container">
-    </div>
+    <canvas id="chart-container">
+    </canvas>
     <footer>
         <p><a href="/">Petition</a></p>
         <p><a href="https://github.com/TechForPalestine/verifiedPetition">GitHub</a></p>
     </footer>
 </div>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="https://www.gstatic.com/charts/loader.js"></script>
-<script async defer>
-    google.charts.load('current', {packages: ['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
+<script src="/static/js/chart.js"></script>
+<script async defer type="module">
 
-
-    function drawChart() {
-        const draw = async () => {
-            const statsResponse = await fetch("/stats")
-            const statsData = await statsResponse.json()
-            // Define the chart to be drawn.
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Element');
-            data.addColumn('number', 'Signatures');
-            for(let row of Object.keys(statsData)){
-                data.addRow([row, statsData[row]])
-            }
-            // Instantiate and draw the chart.
-            var chart = new google.visualization.BarChart(document.getElementById('chart-container'));
-            chart.draw(data, null);
-        }
-        draw();
+    const statsResponse = await fetch("/stats")
+    const statsData = await statsResponse.json()
+    // Define the chart to be drawn.
+    let datasetLabels = [];
+    let datasetData = [];
+    for (let row of Object.keys(statsData)) {
+        datasetLabels.push(row)
+        datasetData.push(statsData[row])
     }
-</script></body>
+
+    const ctx = document.getElementById('chart-container')
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: datasetLabels,
+            datasets: [{
+                label: '# of Signatures',
+                data: datasetData,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+        }
+    });
+</script>
+</body>
 </html>
