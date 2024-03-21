@@ -1,3 +1,5 @@
+[![Ceasefire Now](https://badge.techforpalestine.org/default)](https://techforpalestine.org/learn-more)
+
 # verifiedPetition
 
 ### What is this?
@@ -8,6 +10,8 @@ When the user navigates to the website, they are presented with the petition and
 The purpose behind this repository is to demonstrate to those interested in the numbers of people
 signing the petition how signatures were collected. Please feel free to open issues if
 you discover ways to add duplicate emails, skip captcha, or otherwise spam the service.
+
+`verifiedPetition` is an official project of <a target="_blank" href="https://techforpalestine.org/">Tech for Palestine</a>.
 
 ### How does it work?
 When a user asks to sign the petition, if their email belongs to one of the allowed domains in 
