@@ -317,6 +317,7 @@ metlife.com
 mgmresorts.com
 micron.com
 microsoft.com
+mila.quebec
 modernatx.com
 mohawkind.com
 molinahealthcare.com
@@ -410,6 +411,7 @@ rtx.com
 ryder.com
 saic.com
 salesforce.com
+samsung.com
 sanmina.com
 seaboardcorp.com
 sempra.com
